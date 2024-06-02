@@ -27,6 +27,19 @@ public class Player_Controller : MonoBehaviour
         rb.velocity = new Vector2(movement.x * speed, movement.y * speed);  
         
         runAnim();
+        HeroDirection();
+    }
+
+    private void HeroDirection()
+    {
+        if (movement.x >= 0)
+        {
+            transform.localScale = new Vector3(2f, 2f, 2f);
+        }
+        else if (movement.x <0)
+        {
+            transform.localScale = new Vector3(-2f, 2f, 2f);
+        }
     }
 
     private void runAnim()
